@@ -16,16 +16,22 @@ const userSchema = new mongoose.Schema(
         "Please add a valid email",
       ],
     },
+    gender: { type: String, enum: ["male", "female"] },
+
+    height: { type: Number, required: true },
+    
+    weight: { type: Number, required: true },
+
     role: {
       type: String,
       enum: ["user", "publisher"],
       default: "user",
     },
     password: { type: String, required: true },
+
     weightRecords: [
       {
         date: { type: Date, default: Date.now },
-        weight: { type: Number, required: true },
         foodIntake: {
           breakfast: {
             food: { type: String },
@@ -184,3 +190,5 @@ export default mongoose.model("User", userSchema);
 // };
 
 // export default App;
+
+// do for me in front end a log in page the have username and password with connection in server and register that have username password email gender whieght height

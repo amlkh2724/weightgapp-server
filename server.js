@@ -5,10 +5,11 @@ import dotenv from 'dotenv';
 import connectDB from "./config/db.js";
 import getUsers from './routes/weightGapp.js'
 import admin from './routes/adminRoutes.js'
-// import trackUser from "./routes/weightGapp.js";
+import cors from "cors";
 dotenv.config({ path: "./config/config.env" });
 connectDB()
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
