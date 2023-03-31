@@ -55,13 +55,9 @@ export const login = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse("Invalid credentials", 401));
   }
 
-  // Send user data to client
-  res.status(200).json({
-    success: true,
-    user: user
-  });
+  // Send token to client
+  sendTokenResponse(user, 200, res);
 });
-
 
 // @desc    Log user out / clear cookie
 // @route   GET /api/v1/auth/logout
