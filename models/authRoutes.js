@@ -58,14 +58,14 @@ const userSchema = new mongoose.Schema(
     ],
     weekTracker: [
       {
-        startDate: { type: Date, required: true },
-        endDate: { type: Date, required: true },
-        startingWeight: { type: Number, required: true },
-        endingWeight: { type: Number },
-        caloriesConsumed: { type: Number, default: 0 },
+        // startDate: { type: Date, required: true },
+        // endDate: { type: Date, required: true },
+        // startingWeight: { type: Number, required: true },
+        // endingWeight: { type: Number },
+        // caloriesConsumed: { type: Number, default: 0 },
       },
     ],
-    lastWeightAddedDate: [{}],
+    // lastWeightAddedDate: [{}],
 
   },
   {
