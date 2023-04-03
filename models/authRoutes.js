@@ -65,7 +65,7 @@ const userSchema = new mongoose.Schema(
         caloriesConsumed: { type: Number, default: 0 },
       },
     ],
-    lastWeightAddedDate: { type: Date },
+    lastWeightAddedDate: [{}],
 
   },
   {
