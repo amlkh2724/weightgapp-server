@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
 
     height: { type: Number, required: true },
     
-    weight: { type: Number, required: true },
+    weight: [{}],
 
     role: {
       type: String,
