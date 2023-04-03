@@ -9,6 +9,17 @@ export const getaAllUsers = asyncHandler(async (req, res, next) => {
   });
 });
 
+
+
+
+export const getSpecificUser = asyncHandler(async (req, res) => {
+  const specificUser = await User.findById(req.params.id);
+  res.status(200).json({
+    success: true,
+    data: specificUser,
+  });
+});
+
 // @desc    Register user
 // @route   POST /api/v1/auth/register
 // @access  Public
