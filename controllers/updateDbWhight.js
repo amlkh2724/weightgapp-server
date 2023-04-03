@@ -111,6 +111,35 @@ export const UpdateTheWeightFoodIntake = asyncHandler(async (req, res) => {
   });
 });
 
+export const addWeight=asyncHandler(async (req, res)=> {
+  try {
+    const user = await User.findById(req.user.id);
+
+    // Check if the user has already added their weight today
+    const today = new Date();
+    const lastWeightAddedDate = new Date(user.lastWeightAddedDate);
+    const isSameDay = today.toDateString() === lastWeightAddedDate.toDateString();
+
+    if (isSameDay && user.hasAddedWeightToday) {
+      return res.status(400).json({ success: false, message: "You have already added your weight for today" });
+    }
+
+    // Update the user's weight records with the new weight entry
+    user.weightRecords.push({ weight: req.body.weight });
+    user.hasAddedWeightToday = true;
+    user.lastWeightAddedDate = today;
+
+    // Save the updated user record
+    await user.save();
+
+    res.status(200).json({ success: true, message: "Weight added successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Server Error" });
+  }
+})
+
+
 // @desc    Forgot password
 // @route   POST /api/v1/auth/forgot-password
 // @access  Public
