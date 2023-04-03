@@ -13,7 +13,7 @@ router.route("/").get(getaAllUsers);
 router.route("/register").post(checkRegister);
 router.route("/login").post(login);
 router.get("/logout", logout);
-router.route('userbyid/:id').get(getSpecificUser)
+router.route('/userbyid/:id').get(getSpecificUser)
 router.route("/weightRecords/:id").put(UpdateTheWeightFoodIntake);
 // router.route("/checkweight/:id").put(addWeight);
 
