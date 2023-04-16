@@ -21,7 +21,10 @@ if (process.env.NODE_ENV !== "production") {
 app.get("/", (req, res) => {
   res.send("Welcome to your server!");
 });
-
+// 
+// 
+// 
+// 
 const PORT = process.env.PORT || 5000;
 // app.use("/users", trackUser);
 app.use("/users", getUsers);
