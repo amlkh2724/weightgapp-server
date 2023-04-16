@@ -9,6 +9,7 @@ const sendTokenResponse = (user, statusCode, res) => {
     role: user.role,
     weightRecords: user.weightRecords,
     weekTracker: user.weekTracker,
+    weeksHistory:user.weeksHistory,
     id: user._id
   };
   const options = {
@@ -27,5 +28,5 @@ const sendTokenResponse = (user, statusCode, res) => {
       user: userInfo
     });
 };
-
+// 
 export default sendTokenResponse;
