@@ -10,7 +10,7 @@ const sendTokenResponse = (user, statusCode, res) => {
     weightRecords: user.weightRecords,
     weekTracker: user.weekTracker,
     weeksHistory:user.weeksHistory,
-    yourGoal:user.yourGoal,
+    setGoal:user.setGoal,
     id: user._id
   };
   const options = {
