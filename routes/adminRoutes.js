@@ -8,9 +8,7 @@ import {
 } from "../controllers/admin.js";
 
 const router = express.Router({ mergeParams: true });
-
-
-
+// 
 router
 .route("/admin")
 .get(getAllUsers).
