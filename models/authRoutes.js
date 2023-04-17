@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     gender: { type: String, enum: ["male", "female"] },
 
     height: { type: Number, required: true },
-    
+
     weight: [{}],
 
     role: {
@@ -56,15 +56,9 @@ const userSchema = new mongoose.Schema(
         },
       },
     ],
-    weekTracker: [
-      {
-  
-      },
-    ],
-    weeksHistory:[{
-      
-    }],
-    yourGoal:{type:String}
+    weekTracker: [{}],
+    weeksHistory: [{}],
+    yourGoal: { type: String, enum: ["gainWeigh", "lostWeight"] },
   },
   {
     toJSON: {
