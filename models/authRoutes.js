@@ -58,7 +58,7 @@ const userSchema = new mongoose.Schema(
     ],
     weekTracker: [{}],
     weeksHistory: [{}],
-    yourGoal: { type: String, enum: ["gainWeigh", "lostWeight"] },
+    yourGoal: {},
   },
   {
     toJSON: {
