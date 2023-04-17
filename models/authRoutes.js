@@ -63,7 +63,8 @@ const userSchema = new mongoose.Schema(
     ],
     weeksHistory:[{
       
-    }]
+    }],
+    yourGoal:{type:String}
   },
   {
     toJSON: {
@@ -115,79 +116,3 @@ userSchema.pre("save", async function (next) {
 });
 
 export default mongoose.model("User", userSchema);
-
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-
-// const App = () => {
-//   const [showModal, setShowModal] = useState(false);
-//   const [weight, setWeight] = useState("");
-//   const [food, setFood] = useState("");
-//   const [data, setData] = useState([]);
-
-//   const userId = "your-user-id";
-
-//   const handleModal = () => setShowModal(!showModal);
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     axios.post(`/users/${userId}/data`, { weight, food }).then(() => {
-//       setWeight("");
-//       setFood("");
-//       setShowModal(false);
-//       fetchData();
-//     });
-//   };
-
-//   const fetchData = () => {
-//     axios.get(`/users/${userId}/data`).then((response) => {
-//       setData(response.data);
-//     });
-//   };
-
-//   useEffect(() => {
-//     fetchData();
-//   }, []);
-
-//   return (
-//     <div>
-//       <button onClick={handleModal}>Enter Weight and Food</button>
-//       <div>
-//         {data.map((item) => (
-//           <div key={item.date}>
-//             <div>Date: {item.date}</div>
-//             <div>Weight: {item.weight}</div>
-//             <div>Calories: {item.calories}</div>
-//           </div>
-//         ))}
-//       </div>
-//       {showModal && (
-//         <div>
-//           <form onSubmit={handleSubmit}>
-//             <div>
-//               <label>Weight:</label>
-//               <input
-//                 type="text"
-//                 value={weight}
-//                 onChange={(event) => setWeight(event.target.value)}
-//               />
-//             </div>
-//             <div>
-//               <label>Food:</label>
-//               <input
-//                 type="text"
-//                 value={food}
-//                 onChange={(event) => setFood(event.target.value)}
-//               />
-//             </div>
-//             <button type="submit">Submit</button>
-//           </form>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default App;
-
-// do for me in front end a log in page the have username and password with connection in server and register that have username password email gender whieght height
