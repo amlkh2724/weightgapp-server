@@ -24,7 +24,7 @@ export const getSpecificUser = asyncHandler(async (req, res) => {
 // @route   POST /api/v1/auth/register
 // @access  Public
 export const checkRegister = asyncHandler(async (req, res, next) => {
-  const { username, email, password, role, height, weight, gender,lastWeightAddedDate,yourGoal } = req.body;
+  const { username, email, password, role, height, weight, gender,lastWeightAddedDate } = req.body;
 
   const user = await User.create({
     username,
@@ -35,7 +35,7 @@ export const checkRegister = asyncHandler(async (req, res, next) => {
     weight,
     gender,
     lastWeightAddedDate,
-    yourGoal
+  
   });
 
   // Send token to client
