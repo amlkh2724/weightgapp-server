@@ -29,5 +29,4 @@ const sendTokenResponse = (user, statusCode, res) => {
       user: userInfo
     });
 };
-// 
 export default sendTokenResponse;
