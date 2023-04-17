@@ -58,7 +58,7 @@ const userSchema = new mongoose.Schema(
     ],
     weekTracker: [{}],
     weeksHistory: [{}],
-    setGoal: [{}],
+    setGoal: {},
   },
   {
     toJSON: {
