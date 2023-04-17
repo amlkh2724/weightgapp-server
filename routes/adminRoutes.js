@@ -12,7 +12,6 @@ router
 .route("/admin")
 .get(getAllUsers).
 post(createUser);
-// 
 router
 .route("/admin/:id")
 .get(getUser).
@@ -20,4 +19,3 @@ put(updateUser)
 .delete(deleteUser);
 
 export default router;
-// 
